@@ -8,7 +8,7 @@ const products = [
 function renderProducts() {
   const list = document.getElementById("productList");
   if (!list) return;
-
+ 
   list.innerHTML = "";
   
   products.forEach((p, i) => {
