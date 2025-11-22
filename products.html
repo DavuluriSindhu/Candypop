@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Products – Bloom & Co</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products – Bloom Pop</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
- 
 <body>
 
-<header class="nav-premium">
-  <h1 class="brand">Bloom & Co</h1>
+<header class="nav">
+  <h1 class="logo">Bloom Pop</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="products.html">Products</a>
@@ -17,19 +18,11 @@
   </nav>
 </header>
 
-<section class="filter-section">
-  <input id="searchBar" type="text" placeholder="Search products..." onkeyup="filterProducts()">
-  <select id="categoryFilter" onchange="filterProducts()">
-    <option value="all">All</option>
-    <option value="men">Men</option>
-    <option value="women">Women</option>
-    <option value="kids">Kids</option>
-  </select>
-</section>
+<h2 class="title">Our Products</h2>
 
-<h2 class="page-heading">Our Collection</h2>
+<div id="productList" class="grid"></div>
 
-<div id="productList" class="product-grid-premium"></div>
+<a href="cart.html" class="btn center">Go to Cart →</a>
 
 </body>
 </html>
