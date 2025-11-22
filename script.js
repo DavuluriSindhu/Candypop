@@ -51,5 +51,11 @@ if (document.getElementById("cartItems")) {
 
 // PAYMENT
 function payNow() {
-  alert("Payment Successful! (Integrate Razorpay here)");
+  alert("Payment Successful! Thank you for your purchase ❤️");
+
+  // Redirect to home page after 2 seconds
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 2000);
 }
+
