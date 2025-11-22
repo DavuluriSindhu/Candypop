@@ -8,7 +8,15 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-9DR2XX5BNF');
+  gtag('config', 'G-9DR2XX5BNF'
+      , {
+    'linker': {
+      'domains': [
+        'davulurisindhu.github.io',
+        'visionary-froyo-52ec2a.netlify.app'
+      ]
+    }
+  });
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
