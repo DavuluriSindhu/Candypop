@@ -1,30 +1,25 @@
 const products = [
-  { name: "Elegant Pink Dress", price: 999, category: "women", img: "https://images.unsplash.com/photo-1520975680246-1e6c9a1f3c6f" },
-  { name: "Signature Blue Hoodie", price: 1299, category: "men", img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246" },
-  { name: "Yellow Cotton Tee", price: 599, category: "kids", img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" }
+  { name: "Floral Dress", price: 999, img: "https://images.unsplash.com/photo-1520975680246-1e6c9a1f3c6f" },
+  { name: "Sky Blue Hoodie", price: 1399, img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246" },
+  { name: "Yellow Tee", price: 499, img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" }
 ];
 
-// RENDER PRODUCTS
-function renderProducts() {
-  const list = document.getElementById("productList");
-  if (!list) return;
- 
-  list.innerHTML = "";
-  
+// Render Products
+if (document.getElementById("productList")) {
+  let list = document.getElementById("productList");
   products.forEach((p, i) => {
     list.innerHTML += `
       <div class="product-card">
         <img src="${p.img}">
         <h3>${p.name}</h3>
         <p>₹${p.price}</p>
-        <button class="btn-premium" onclick="addToCart(${i})">Add to Cart</button>
+        <button class="btn" onclick="addToCart(${i})">Add to Cart</button>
       </div>
     `;
   });
 }
-renderProducts();
 
-// CART
+// Cart Logic
 let cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
 function addToCart(i) {
@@ -33,29 +28,25 @@ function addToCart(i) {
   alert("Added to cart!");
 }
 
-// RENDER CART
+// Render Cart
 if (document.getElementById("cartItems")) {
-  const box = document.getElementById("cartItems");
+  let box = document.getElementById("cartItems");
   cart.forEach(item => {
     box.innerHTML += `
-      <div class="cart-item">
+      <div class="product-card">
         <img src="${item.img}">
-        <div>
-          <h3>${item.name}</h3>
-          <p>₹${item.price}</p>
-        </div>
+        <h3>${item.name}</h3>
+        <p>₹${item.price}</p>
       </div>
     `;
   });
 }
 
-// PAYMENT
-function payNow() {
-  alert("Payment Successful! Thank you for your purchase ❤️");
+// Payment → Thank You → Redirect Home
+function completePayment() {
+  alert("Thank You! Your order is confirmed ❤️");
 
-  // Redirect to home page after 2 seconds
   setTimeout(() => {
     window.location.href = "index.html";
   }, 2000);
 }
-
